@@ -18,12 +18,30 @@
 
 <header class="navbar">
     <form action="/upload" method="post" enctype="multipart/form-data" >
+        <div class="form-row">
+            <div class="col-7">
+              <input type="text" class="form-control" placeholder="First Name" name="f_name">
+            </div>
+            <br>
+            <div class="col-7">
+              <input type="text" class="form-control" placeholder="Mid Name (Optional)" name="mid_name">
+            </div>
+            <br>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Last Name" name="l_name">
+            </div>
+            <br>
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Identity Card Number" name="id_no">
+            </div>
+            <br>
         <div align="center">
             <label class="btn btn-default btn-file">
                 Browse <input type="file" name="image" style="display: none;">
             </label>
             <input type="submit" value="Upload your image" class="btn btn-primary">
         </div>
+        
     </form>
 </header>
 
@@ -44,6 +62,36 @@
             </div>
         {% endif %}
     {% endif %}
+</div>
+
+<div class="container">
+    <br>
+    <br>
+
+    <h2>Information</h2>
+    <p>First name: {{ f }} </p>
+    <p>Last name: {{ l }} </p>
+    <p>Identity Number: {{ i }} </p>
+
+    <div class="text-center">
+{% if init %}
+    {% if faceDetected %}
+        <div class="alert alert-success" style="margin-top:18px;">
+            <strong>Yes!</strong>  face(s) detected!
+        </div>
+        {% if image_to_show %}
+            <div>
+                <img src="{{ image_to_show }}">
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="alert alert-danger" style="margin-top:18px;">
+            <strong>Nope!</strong> No face detected
+        </div>
+    {% endif %}
+{% endif %}
+</div>
+    
 </div>
 
 </body>

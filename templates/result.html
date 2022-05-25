@@ -1,0 +1,45 @@
+{% include "header.html" %}
+
+{% block body %}
+    <div class="container">
+        <br>
+        <br>
+        <h1>Results</h1>
+        <hr>
+        
+
+        <h2>Information</h2>
+        <p>Words: {{ words }}</p>
+        <p>Scan time: {{ time }} seconds</p>
+        <p>First name: {{ f }} </p>
+        <p>Last name: {{ l }} </p>
+        <p>Identity Number: {{ i }} </p>
+        <hr>
+
+        <h2>Extracted text</h2>
+        <p>{{ text }}</p>
+
+        <div class="text-center">
+    {% if init %}
+        {% if faceDetected %}
+            <div class="alert alert-success" style="margin-top:18px;">
+                <strong>Yes!</strong>  face(s) detected!
+            </div>
+            {% if image_to_show %}
+                <div>
+                    <img src="{{ image_to_show }}">
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="alert alert-danger" style="margin-top:18px;">
+                <strong>Nope!</strong> No face detected
+            </div>
+        {% endif %}
+    {% endif %}
+</div>
+        
+    </div>
+{% endblock body %}
+
+
+{% include "footer.html" %}
