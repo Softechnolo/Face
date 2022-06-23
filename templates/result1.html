@@ -1,0 +1,29 @@
+{% include "header.html" %}
+
+{% block body %}
+    <div class="container">
+        <br>
+        <br>
+        <h1>Results</h1>
+
+        <hr>
+        
+
+        <h2>Information</h2>
+        <p>Verified info: {% for ver in verified_info %} {{ ver }} {% endfor %}</p>
+        <p>Unverified info: {% for un_ver in unverified_info %} {{ un_ver }} {% endfor %} </p>
+        <hr>
+
+        <hr>
+
+        <h2>Extracted text</h2>
+        <p>{{ text }}</p>
+
+
+</div>
+        
+    </div>
+{% endblock body %}
+
+
+{% include "footer.html" %}

@@ -1,0 +1,92 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+	<div class="content">
+		<div class="page-inner">
+			<div class="page-header">
+				<h4 class="page-title">Dashboard</h4>
+				<ul class="breadcrumbs">
+					<li class="nav-home">
+						<a href="#">
+							<i class="flaticon-home"></i>
+						</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Pages</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Document Verification</a>
+					</li>
+				</ul>
+			</div>
+			<div class="page-category">
+
+				<div class = "container">
+					<div class = "starter-template" style="text-align: center;">
+					</div>
+				</div>
+				<div id="wrapper">
+				<div id="form_div">
+					<form action="/scanner" method="post" enctype="multipart/form-data">
+				  <table id="employee_table" align="center" class="table">
+					<tr id="row1">
+				  <td width="300px"><input class="form-control" class="form-control" type="text" name="name[]" placeholder="Title (First name, last name, ID number, Tax ID, etc.)"></td>
+					
+				  <td><input class="form-control" type="text" name="age[]" placeholder="Information"></td>
+					
+					</tr>
+					</table>
+					<br>
+					<input type="button" onclick="add_row();" value="Add More" class="btn btn-primary">
+					<br><br>
+					<div class="custom-file">
+					  <input type="file" name="file" class="custom-file-input" id="inputGroupFile01"
+							 aria-describedby="inputGroupFileAddon01" accept="image/*"  required="">
+					<br>
+					  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+				  </div>
+				  <br><br>
+				   <button  type="submit" class="btn btn-raised btn-primary">Verify Document</button>
+					
+					 </form>
+				  </div>
+				  <h2>Information</h2>
+				  <p>Verified info: {% for ver in verified_info %} {{ ver }} {% endfor %}</p>
+				  <p>Unverified info: {% for un_ver in unverified_info %} {{ un_ver }} {% endfor %} </p>
+				  <h2>Extracted text</h2>
+				  <p>{{ text }}</p>
+
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  function add_row()
+  {
+   $rowno=$("#employee_table tr").length;
+   $rowno=$rowno+1;
+	  $("#employee_table tr:last").after("<tr id='row"+$rowno+"'><td><input class='form-control' type='text' name='name[]' placeholder='Field'></td><td><input class='form-control' type='text' name='age[]' placeholder='Input'></td><td><input class='btn button-primary' type='button' value='DELETE' onclick=delete_row('row"+$rowno+"')></td></tr><br><br>");
+  }
+  function delete_row(rowno)
+  {
+   $('#'+rowno).remove();
+  }
+  </script>
+{% endblock javascripts %}

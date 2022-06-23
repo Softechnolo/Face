@@ -1,0 +1,69 @@
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="{{ url_for('static', filename='css/mdb.min.css') }}" rel="stylesheet">
+
+    <!-- Your custom styles (optional) -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h4>Registeration Form</h4>
+      <form method="POST" action="/registeration">
+        <input class="form-control form-control-sm" type="text" placeholder="Full Name" name="name">
+        <br>
+        <input class="form-control form-control-sm" type="text" placeholder="Email" name="username">
+        
+        <br>
+        <input class="form-control form-control-sm" type="password" placeholder="Password" name="peassword">
+        <br>
+        <input class="form-control form-control-sm" type="password" placeholder="Repeat Password" name="r_peassword">
+        <br>
+        <label  class="sr-only">Passport</label>
+        <input class="form-control form-control-sm" type="file" placeholder="Passport" name="Passport">
+        <br>
+        <button type="submit" class="btn btn-primary mb-2" value="Add">Register</button>
+
+      </form>
+  
+    </div>
+
+    <h1>Books</h1>
+    <table>
+      {% for book in books %}
+        <tr>
+          <td>
+            {{book.title}}
+          </td>
+          <td>
+            <form method="POST" action="./update" style="display: inline">
+              <input type="hidden" value="{{book.title}}" name="oldtitle">
+              <input type="text" value="{{book.title}}" name="newtitle">
+              <input type="text" value="{{book.title}}" name="newtitle">
+              <input type="submit" value="Update">
+            </form>
+          </td>
+          <td>
+            <form method="POST" action="./delete" style="display: inline">
+              <input type="hidden" value="{{book.title}}" name="title">
+              <input type="submit" value="Delete">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

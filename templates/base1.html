@@ -1,0 +1,243 @@
+<!-- Header -->
+{% include 'header1.html' %}
+<!--Header-->
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}
+Login
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}">
+{% endblock %}
+
+{% block content %}
+<body>
+<div class="noise-wrapper">
+  <div class="separator-shadow-bottom">
+    <img alt="" src="/static/images/shadow-separator-wide-bottom.png">
+  </div>
+  <section class="leaderboard leaderboard-style-one">
+    <div class="container">
+      <h1 class="animated fadeInDown">Spewhub Face APIs</h1>
+      <h2 class="animated fadeInDown">Prevent fraud by ensuring that customers are truly present</h2>
+      <div class="relative-w">
+        <div class="loupe loupe-left animated rollIn">
+          <img alt="" src="/static/images/showcase.jpg">
+        </div>
+        <div class="loupe loupe-right animated flipInY">
+          <img alt="" src="/static/images/showcase.jpg">
+        </div>
+        <div class="frame-browser animated bounceInUp">
+          <div class="frame-buttons">
+            <div class="frame-button-close"></div>
+            <div class="frame-button-max"></div>
+            <div class="frame-button-min"></div>
+          </div>
+          <div class="frame-browser-image">
+            <img alt="" src="/static/images/showcase.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="separator-shadow-top above-screenshot-shadow">
+    <img alt="" src="/static/images/shadow-separator-wide-top.png">
+  </div>
+</div>
+<div class="area-content">
+  <div class="container">
+    <div class="separator-shadow-top sub-screenshot-shadow">
+      <img alt="" src="/static/images/shadow-separator-wide-top.png">
+    </div>
+    <div class="iconed-features lift-on-hover style-1">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="iconed-feature">
+            <div class="feature-icon-w">
+              <i class="icon-eye-open"></i>
+            </div>
+            <h4>Face Detection</h4>
+            <p>--------------</p>
+            <div class="btn-show-on-parent-hover">
+              <a class="read-more-link" href="base1.html#">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="iconed-feature">
+            <div class="feature-icon-w">
+              <i class="icon-cog"></i>
+            </div>
+            <h4>Face Verification</h4>
+            <p> ------------------- </p>
+            <div class="btn-show-on-parent-hover">
+              <a class="read-more-link" href="base1.html#">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="iconed-feature">
+            <div class="feature-icon-w">
+              <i class="icon-leaf"></i>
+            </div>
+            <h4>Document Verifiation</h4>
+            <p>-------------------</p>
+            <div class="btn-show-on-parent-hover">
+              <a class="read-more-link" href="base1.html#">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="separator-shadow-bottom bottom-margin">
+      <img alt="" src="/static/images/shadow-separator-wide-bottom.png">
+    </div>
+
+ 
+  </div>
+ 
+ 
+ 
+  <div class="container">
+
+    <h2 class="header-lined has-sub-header text-center" id="anchorPricing">Pricing</h2>
+    <div class="pricing-table-columns bottom-margin">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="plan-column">
+            <h4>Basic</h4>
+            <div class="separator-shadow-top">
+              <img alt="" src="/static/images/shadow-separator-narrow-top.png">
+            </div>
+            <div class="plan-price">
+              $1.52
+              <span>/verificaton</span>
+            </div>
+            <div class="separator-shadow-bottom">
+              <img alt="" src="/static/images/shadow-separator-narrow-bottom.png">
+            </div>
+            <ul>
+              <li>
+                <strong>For smaller businesses who want to strengthen fraud defenses</strong>
+                <li>Face Verification</li>
+                    <li>Liveness & Face Match </li>
+                      <li>Document Verification </li>
+                
+              </li>
+              <li>
+                <strong>5Gb</strong>
+                Storage
+              </li>
+            </ul>
+            <div class="separator-shadow-top">
+              <img alt="" src="/static/images/shadow-separator-narrow-top.png">
+            </div>
+            <div class="button-w">
+              <a class="btn btn-primary" href="base1.html#">Choose this Plan</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="plan-column highlight">
+            <h4>Compliance
+              </h4>
+            <div class="separator-shadow-top">
+              <img alt="" src="/static/images/shadow-separator-narrow-top.png">
+            </div>
+            <div class="plan-price">
+              $1.87
+              <span>/verificaton</span>
+            </div>
+            <div class="separator-shadow-bottom">
+              <img alt="" src="/static/images/shadow-separator-narrow-bottom.png">
+            </div>
+            <ul>
+              <li>
+                <strong>For businesses committed to regulatory compliance</strong>
+                <li>Face Verification</li>
+                <li>Liveness & Face Match </li>
+                  <li>Document Verification </li>
+                  <li>ID Card Verification </li>
+          
+              </li>
+              <li>
+                <strong>20Gb</strong>
+                Storage
+              </li>
+            </ul>
+            <div class="separator-shadow-top">
+              <img alt="" src="/static/images/shadow-separator-narrow-top.png">
+            </div>
+            <div class="button-w">
+              <a class="btn btn-primary" href="base1.html#">Choose this Plan</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="plan-column">
+            <h4>Beyond</h4>
+            <div class="separator-shadow-top">
+              <img alt="" src="/static/images/shadow-separator-narrow-top.png">
+            </div>
+            <div class="plan-price">
+              $2.05
+              <span>/verificaton</span>
+            </div>
+            <div class="separator-shadow-bottom">
+              <img alt="" src="/static/images/shadow-separator-narrow-bottom.png">
+            </div>
+            <ul>
+              <li>
+                <strong>For businesses who handle risky transactions</strong>
+                <li>Face Verification</li>
+                    <li>Liveness & Face Match </li>
+                      <li>Document Verification </li>
+                      <li>ID Card Verification </li>
+                
+              </li>
+              <li>
+                <strong>60Gb</strong>
+                Photo Storage
+              </li>
+            </ul>
+            <div class="separator-shadow-top">
+              <img alt="" src="/static/images/shadow-separator-narrow-top.png">
+            </div>
+            <div class="button-w">
+              <a class="btn btn-primary" href="base1.html#">Choose this Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <footer id="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="footer-menu">
+            <li><a href="base1.html#">Privacy Policy</a></li>
+            <li><a href="base1.html#">Terms of Service</a></li>
+            <li><a href="base1.html#">Contact Us</a></li>
+          </ul>
+          <div class="copyright">
+            2022 © Raj Analyics inc. All rights reserved.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul class="footer-social">
+            <li><a href="base1.html#"><i class="icon-facebook"></i></a></li>
+            <li><a href="base1.html#"><i class="icon-twitter"></i></a></li>
+            <li><a href="base1.html#"><i class="icon-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </body></html>
+
+  {% endblock %}

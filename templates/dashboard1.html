@@ -1,0 +1,438 @@
+<!-- Header -->
+		{% include 'header1.html' %}
+    {% extends "bootstrap/base.html" %}
+    {% import "bootstrap/wtf.html" as wtf %}
+    {{super()}}
+<!--Header-->
+<body>
+<div class="noise-wrapper">
+  <div class="header-main header-tp" id="anchorHome">
+    <div class="container">
+  <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="current navbar-brand" href="/static/images/Responsive HTML template for Bootstrap 3.html">
+        <h3 style="margin-top:5px;">SPEW FACEAPI</h3>
+      </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <a class="btn btn-default navbar-btn navbar-right" data-toggle="modal" href="upload">
+        Upload
+        <i class="icon-signin"></i>
+      </a>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="current active">
+          <a class="current" href="/">Home</a>
+        </li>
+        <li class="current active">
+          <a class="current" href="/">About</a>
+        </li>
+        <li class="current active">
+          <a class="current" href="/">Product</a>
+        </li>
+        <li class="current active">
+          <a class="current" href="/">Solution</a>
+        </li>
+        <li class="current active">
+          <a class="current" href="/">Pricing</a>
+        </li>
+        <li class="current active">
+          <a class="current" href="/">Contact</a>
+        </li>
+        <li class="current active">
+          <a class="current" href="{{ url_for('signup') }}">Sign Up</a>
+        </li>
+        <li class="current active">
+          <a class="current" href="{{ url_for('login') }}">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+ </div>
+</div>
+  <div class="separator-shadow-bottom">
+    <img alt="" src="/static/images/shadow-separator-wide-bottom.png">
+  </div>
+  <section class="leaderboard leaderboard-style-one">
+    <div class="container">
+      <h1 class="animated fadeInDown">Spew HUB Face Recognition Ssytem</h1>
+      <h2 class="animated fadeInDown">Face recognition with 99.92% Accuracys</h2>
+      <div class="relative-w">
+        <div class="loupe loupe-left animated rollIn">
+          <img alt="" src="/static/images/showcase.jpg">
+        </div>
+        <div class="loupe loupe-right animated flipInY">
+          <img alt="" src="/static/images/showcase.jpg">
+        </div>
+        <div class="frame-browser animated bounceInUp">
+          <div class="frame-buttons">
+            <div class="frame-button-close"></div>
+            <div class="frame-button-max"></div>
+            <div class="frame-button-min"></div>
+          </div>
+          <div class="frame-browser-image">
+            <img alt="" src="/static/images/showcase.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="separator-shadow-top above-screenshot-shadow">
+    <img alt="" src="/static/images/shadow-separator-wide-top.png">
+  </div>
+</div>
+<div class="area-content">
+  <div class="container">
+    <div class="separator-shadow-top sub-screenshot-shadow">
+      <img alt="" src="/static/images/shadow-separator-wide-top.png">
+    </div>
+    <div class="iconed-features lift-on-hover style-1">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="iconed-feature">
+            <div class="feature-icon-w">
+              <i class="icon-eye-open"></i>
+            </div>
+            <h4>Liveness Detection</h4>
+            <p>Prevent fraud by ensuring that customers are truly present, thanks to Sumsub's people-friendly biometrics.</p>
+            <div class="btn-show-on-parent-hover">
+              <a class="read-more-link" href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="iconed-feature">
+            <div class="feature-icon-w">
+              <i class="icon-cog"></i>
+            </div>
+            <h4>Face Comparison and Verification</h4>
+            <p>Check the possibility of two faces refers to the same person the system provides the confidence score and threshold value to decide the similarity.
+              .</p>
+            <div class="btn-show-on-parent-hover">
+              <a class="read-more-link" href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="iconed-feature">
+            <div class="feature-icon-w">
+              <i class="icon-cog"></i>
+            </div>
+            <h4>Document Verification</h4>
+            <p>Ensure the Authenticity of a document Online</p>
+            <div class="btn-show-on-parent-hover">
+              <a class="read-more-link" href="#">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="separator-shadow-bottom bottom-margin">
+      <img alt="" src="/static/images/shadow-separator-wide-bottom.png">
+    </div>
+    <div class="row bottom-margin">
+      <div class="col-md-5">
+        <h2 class="header-lined">Face Verification</h2>
+        <ul class="list-checkmarked text-bigger">
+          <li>Know Your Customers, and onboard them in 5 seconds or less</li>
+        </ul>
+        <!-- %a.btn.btn-default{:href => "#"} Show me Example -->
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-6">
+        <div class="relative-w">
+          <div class="loupe loupe-left loupe-large animated-when-visible" data-animation-type="fadeInLeft">
+            <img alt="" src="/static/images/showcase.jpg">
+          </div>
+          <div class="frame-browser animated-when-visible" data-animation-type="bounceInRight">
+            <div class="frame-buttons">
+              <div class="frame-button-close"></div>
+              <div class="frame-button-max"></div>
+              <div class="frame-button-min"></div>
+            </div>
+            <div class="frame-browser-image">
+              <img alt="" src="/static/images/showcase.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="separator-shadow-top bottom-margin">
+      <img alt="" src="/static/images/shadow-separator-wide-top.png">
+    </div>
+    <div class="slogan text-center">
+      <h2 class="header-highlighted">Great for Website and individduals</h2>
+      <p>Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.</p>
+      <div class="slogan-buttons">
+        <a class="btn btn-primary btn-cta btn-lg animated swing" href="#">
+          Sign Up For A free Demo
+        </a>
+      </div>
+    </div>
+    <h2 class="header-lined has-sub-header text-center" id="anchorPricing">Pricing Tables</h2>
+    <h4 class="sub-lined-header text-center">We offer multiple pricing plans to go with your new account.</h4>
+    <div class="pricing-table-columns bottom-margin">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="plan-column">
+            <h4>Basic</h4>
+            <div class="separator-shadow-top">
+              <img alt="" src="/static/images/shadow-separator-narrow-top.png">
+            </div>
+            <div class="plan-price">
+              $59
+              <span>/month</span>
+            </div>
+            <div class="separator-shadow-bottom">
+              <img alt="" src="/static/images/shadow-separator-narrow-bottom.png">
+            </div>
+            <ul>
+              <li>
+                <strong>Unlimited</strong>
+                Collaborators
+              </li>
+              <li>
+                <strong>5Gb</strong>
+                Storage
+              </li>
+            </ul>
+            <div class="separator-shadow-top">
+              <img alt="" src="/static/images/shadow-separator-narrow-top.png">
+            </div>
+            <div class="button-w">
+              <a class="btn btn-primary" href="#">Choose this Plan</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="plan-column highlight">
+            <h4>Professional</h4>
+            <div class="separator-shadow-top">
+              <img alt="" src="/static/images/shadow-separator-narrow-top.png">
+            </div>
+            <div class="plan-price">
+              $99
+              <span>/month</span>
+            </div>
+            <div class="separator-shadow-bottom">
+              <img alt="" src="/static/images/shadow-separator-narrow-bottom.png">
+            </div>
+            <ul>
+              <li>
+                <strong>Unlimited</strong>
+                Collaborators
+              </li>
+              <li>
+                <strong>15Gb</strong>
+                Storage
+              </li>
+            </ul>
+            <div class="separator-shadow-top">
+              <img alt="" src="/static/images/shadow-separator-narrow-top.png">
+            </div>
+            <div class="button-w">
+              <a class="btn btn-primary" href="#">Choose this Plan</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="plan-column">
+            <h4>Advanced</h4>
+            <div class="separator-shadow-top">
+              <img alt="" src="/static/images/shadow-separator-narrow-top.png">
+            </div>
+            <div class="plan-price">
+              $199
+              <span>/month</span>
+            </div>
+            <div class="separator-shadow-bottom">
+              <img alt="" src="/static/images/shadow-separator-narrow-bottom.png">
+            </div>
+            <ul>
+              <li>
+                <strong>Unlimited</strong>
+                Collaborators
+              </li>
+              <li>
+                <strong>30Gb</strong>
+                Storage
+              </li>
+            </ul>
+            <div class="separator-shadow-top">
+              <img alt="" src="/static/images/shadow-separator-narrow-top.png">
+            </div>
+            <div class="button-w">
+              <a class="btn btn-primary" href="#">Choose this Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="highlight-content bottom-margin light">
+    <div class="carousel slide" id="carousel-testimonials">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li class="active" data-slide-to="0" data-target="#carousel-testimonials"></li>
+        <li data-slide-to="1" data-target="#carousel-testimonials"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+
+      <!-- Controls -->
+      <a class="left carousel-control" data-slide="prev" href="#carousel-testimonials">
+        <span class="icon-prev"></span>
+      </a>
+      <a class="right carousel-control" data-slide="next" href="#carousel-testimonials">
+        <span class="icon-next"></span>
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <h2 class="header-lined has-sub-header text-center" id="anchorFeatures">More Features</h2>
+    <h4 class="sub-lined-header text-center">Another type of layout for your company features with icons located on the left of the description.</h4>
+    <div class="iconed-features style-2">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="iconed-feature">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="feature-icon-w animated-when-visible" data-animation-type="rollIn">
+                  <i class="icon-comments"></i>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <h4>Customer Support</h4>
+                <p>Our app enables you to manage all your work – from the most complex projects to everyday tasks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="iconed-feature">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="feature-icon-w animated-when-visible" data-animation-type="rollIn">
+                  <i class="icon-exchange"></i>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <h4>Sliders Included</h4>
+                <p>Our app enables you to manage all your work – from the most complex projects to everyday tasks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="iconed-feature">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="feature-icon-w animated-when-visible" data-animation-type="rollIn">
+                  <i class="icon-archive"></i>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <h4>Awesome Icons</h4>
+                <p>Our app enables you to manage all your work – from the most complex projects to everyday tasks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="iconed-features style-2">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="iconed-feature">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="feature-icon-w animated-when-visible" data-animation-type="rollIn">
+                  <i class="icon-desktop"></i>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <h4>Responsive</h4>
+                <p>Our app enables you to manage all your work – from the most complex projects to everyday tasks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="iconed-feature">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="feature-icon-w animated-when-visible" data-animation-type="rollIn">
+                  <i class="icon-eye-open"></i>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <h4>Retina Ready</h4>
+                <p>Our app enables you to manage all your work – from the most complex projects to everyday tasks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="iconed-feature">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="feature-icon-w animated-when-visible" data-animation-type="rollIn">
+                  <i class="icon-font"></i>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <h4>Google Fonts</h4>
+                <p>Our app enables you to manage all your work – from the most complex projects to everyday tasks.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pull-right carousel-top-controls">
+      <a data-slide="prev" href="#carousel-posts">
+        <span class="icon-angle-left"></span>
+      </a>
+      <a data-slide="next" href="#carousel-posts">
+        <span class="icon-angle-right"></span>
+      </a>
+    </div>
+
+  </div>
+
+</div>
+  <footer id="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="footer-menu">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <div class="copyright">
+            2022 © SPEWHUB. All rights reserved.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul class="footer-social">
+            <li><a href="#"><i class="icon-facebook"></i></a></li>
+            <li><a href="#"><i class="icon-twitter"></i></a></li>
+            <li><a href="#"><i class="icon-dribbble"></i></a></li>
+            <li><a href="#"><i class="icon-linkedin"></i></a></li>
+            <li><a href="#"><i class="icon-google-plus"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </body></html>

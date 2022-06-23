@@ -1,0 +1,126 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='dashboard.css')}}">
+{% endblock %}
+
+{% block content %}
+<input type="button" id='script' name="scriptbutton" value=" Run Script " onclick="goPython()">
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script>
+    function goPython(){
+        $.ajax({
+          url: 'recognize_faces.py',
+         context: document.body
+        }).done(function() {
+         alert('finished python script');;
+        });
+    }
+</script>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Spewhub Face API</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Onboard new users</a></li>
+            <input type="button" id='script' name="scriptbutton" value=" Run Script " onclick="goPython()">
+          </ul>
+
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Face Detection <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Face Detection with image Upload</a></li>
+            <li><a href="#">Face Detection with Camera Demo</a></li>
+          </ul>
+          <hr> <hr>
+          <li class="active"><a href="#">Face Verification <span class="sr-only">(current)</span></a></li>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Face Verification (individual)</a></li>
+            <li><a href="">Face Verification (Database)</a></li>
+
+          </ul>        
+          <hr> <hr>
+          <li class="active"><a href="#">Face Comparison <span class="sr-only">(current)</span></a></li>
+
+          <ul class="nav nav-sidebar">
+            <li><a href="">Face Comparison image vs image</a></li>
+            <li><a href="/img_to_img_compare">Face Comparison image vs Camera</a></li>
+            <li><a href="">Face Comparison (ID Card) vs Passport</a></li>
+          </ul>
+
+          <hr> <hr>
+
+          <li class="active"><a href="#">Document Verification <span class="sr-only">(current)</span></a></li>
+          <ul class="nav nav-sidebar">
+            <li><a href="">General Documents Verification</a></li>
+            <li><a href="">ID Card Verification</a></li>
+          </ul>
+        </div>
+
+           
+      
+      
+      
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Welcome, {{ name }}</h1>
+        <div>
+
+ <div class = "container">
+
+      </div>
+      <br>
+      <a href="/face_with_image" type="button" class="btn btn-primary btn-lg btn-block">Face Detection with image Upload</a>
+      <br>
+      <a href="/indivcam" type="button" class="btn btn-primary btn-lg btn-block">Face Detection with Camera</a>
+      <br>
+      <a href="/face_rec" type="button" class="btn btn-primary btn-lg btn-block">Face verification (Under Development)</a>
+      <br>
+      <br><hr> <hr>
+      <a href="/indivcam" type="button" class="btn btn-primary btn-lg btn-block">Face Verification (individual)</a>
+      <br>
+      <a href="/login_page" type="button" class="btn btn-primary btn-lg btn-block">Face Verification (Database)</a>
+      <br><hr> <hr>
+      <a href="/img_to_img_compare" type="button" class="btn btn-primary btn-lg btn-block">Face Comparison image vs image</a>
+      <br>
+      <a href="/img_to_vid_compare" type="button" class="btn btn-primary btn-lg btn-block">Face Comparison image vs Video</a>
+      <br><hr> <hr>
+      <a href="/index1" type="button" class="btn btn-primary btn-lg btn-block">ID Card Verification</a>
+      <br>
+      <a href="/doc_ver" type="button" class="btn btn-primary btn-lg btn-block">Document Verification</a>
+      
+ 
+        </div>
+
+      </div>
+      </div>
+    </div>
+    
+{% endblock %}

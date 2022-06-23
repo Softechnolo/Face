@@ -1,0 +1,116 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Face API
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='starter-template.css')}}">
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Spewhub Face API</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="heading">
+      <h1>Responsive Smooth Card Carousel</h1>
+    </div>
+    <div class="card-carousel">
+      <div class="my-card"></div>
+      <div class="my-card"></div>
+      <div class="my-card"></div>
+      <div class="my-card"></div>
+      <div class="my-card"></div>
+      <div class="my-card"></div>
+      <div class="my-card"></div>
+      <div class="my-card"></div>
+      <div class="my-card"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script> 
+    <script>
+    $num = $('.my-card').length;
+    $even = $num / 2;
+    $odd = ($num + 1) / 2;
+    
+    if ($num % 2 == 0) {
+      $('.my-card:nth-child(' + $even + ')').addClass('active');
+      $('.my-card:nth-child(' + $even + ')').prev().addClass('prev');
+      $('.my-card:nth-child(' + $even + ')').next().addClass('next');
+    } else {
+      $('.my-card:nth-child(' + $odd + ')').addClass('active');
+      $('.my-card:nth-child(' + $odd + ')').prev().addClass('prev');
+      $('.my-card:nth-child(' + $odd + ')').next().addClass('next');
+    }
+    
+    $('.my-card').click(function() {
+      $slide = $('.active').width();
+      console.log($('.active').position().left);
+      
+      if ($(this).hasClass('next')) {
+        $('.card-carousel').stop(false, true).animate({left: '-=' + $slide});
+      } else if ($(this).hasClass('prev')) {
+        $('.card-carousel').stop(false, true).animate({left: '+=' + $slide});
+      }
+      
+      $(this).removeClass('prev next');
+      $(this).siblings().removeClass('prev active next');
+      
+      $(this).addClass('active');
+      $(this).prev().addClass('prev');
+      $(this).next().addClass('next');
+    });
+    
+    
+    // Keyboard nav
+    $('html body').keydown(function(e) {
+      if (e.keyCode == 37) { // left
+        $('.active').prev().trigger('click');
+      }
+      else if (e.keyCode == 39) { // right
+        $('.active').next().trigger('click');
+      }
+    });
+    </script>
+    <script type="text/javascript">
+    
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-36251023-1']);
+      _gaq.push(['_setDomainName', 'jqueryscript.net']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    
+    </script>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Welcome to Spewhub Face API</h1>
+        <p class="lead">----.<br> --------------.</p>
+      </div>
+
+    </div><!-- /.container -->
+{% endblock %}

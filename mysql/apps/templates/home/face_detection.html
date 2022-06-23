@@ -1,0 +1,68 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+	<div class="content">
+		<div class="page-inner">
+			<div class="page-header">
+				<h4 class="page-title">Face detection (With Picture Upload)</h4>
+				<ul class="breadcrumbs">
+					<li class="nav-home">
+						<a href="#">
+							<i class="flaticon-home"></i>
+						</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Pages</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Face detection</a>
+					</li>
+				</ul>
+			</div>
+			<div class="page-category">
+				<p>
+					<header class="navbar">
+						<form action="/upload" method="post" enctype="multipart/form-data" >
+							<div align="center">
+								<label class="btn btn-default btn-file">
+									Browse <input type="file" name="image" style="display: none;">
+								</label>
+								<input type="submit" value="Upload your image" class="btn btn-primary">
+							</div>
+						</form>
+					</header>
+					<div class="text-center">
+						{% if init %}
+							{% if faceDetected %}
+								<div class="alert alert-success" style="margin-top:18px;">
+									<strong>Yes!</strong>  face(s) detected!
+								</div>
+							{% else %}
+								<div class="alert alert-danger" style="margin-top:18px;">
+									<strong>Nope!</strong> No face detected
+								</div>
+							{% endif %}
+						{% endif %}
+					</div>
+				</p>
+
+
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document Verification</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+	function add_row()
+	{
+	 $rowno=$("#employee_table tr").length;
+	 $rowno=$rowno+1;
+		$("#employee_table tr:last").after("<tr id='row"+$rowno+"'><td><input class='form-control' type='text' name='name[]' placeholder='Field'></td><td><input class='form-control' type='text' name='age[]' placeholder='Input'></td><td><input class='btn button-primary' type='button' value='DELETE' onclick=delete_row('row"+$rowno+"')></td></tr>");
+	}
+	function delete_row(rowno)
+	{
+	 $('#'+rowno).remove();
+	}
+	</script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+<div class = "container">
+    <div class = "starter-template" style="text-align: center;">
+        <h4 >Document Verification</h4>
+		<p> <b>Instructions</b> </p>
+        <p> 1. Image size limit: 2 MB </p>
+		<p> 2. Image should be snapped carefully</p>
+    
+ 
+    </div>
+</div>
+
+<div id="wrapper">
+
+<div id="form_div">
+	<form action="scanner1" method="post" enctype="multipart/form-data" >
+	
+	<table id="employee_table" align="center" class="table">
+	<tr id="row1">
+  <td><input class="form-control" type="text" name="name[]" placeholder="Title (First name, last name, ID number, Tax ID, etc.)"></td>
+	
+  <td><input class="form-control" type="text" name="age[]" placeholder="Information"></td>
+	<td><input type="button" onclick="add_row();" value="Add More" class="btn btn-primary"></td>
+    </tr>
+    
+    </table>
+    <div class="custom-file">
+      <input type="file" name="file" class="custom-file-input" id="inputGroupFile01"
+             aria-describedby="inputGroupFileAddon01" accept="image/*"  required="">
+      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+  </div>
+  <br>
+   <button  type="submit" class="btn btn-raised btn-primary">Verify Document</button>
+	
+	 </form>
+  </div>
+    
+       
+</div></div>
+
+
+
+    
+</div>
+
+</body>
+</html>

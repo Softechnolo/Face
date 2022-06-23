@@ -1,0 +1,57 @@
+{% include "header.html" %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="text-center" style="font-size: 10vh">Document Verification<span style="font-size: 3vh;">Raj Analytics</span></h1>
+        <hr>
+        <hr>
+        <br><br>
+        <h4>Fill Up this and Scan the Identity Card in jpg Format</h4>
+    
+        <div class="text-center">
+            <form action="scanner" method=post enctype=multipart/form-data>
+                <div class="form-row">
+                  <div class="col-7">
+                    <input type="text" class="form-control" placeholder="First Name" name="f_name">
+                  </div>
+                  <br>
+                  <div class="col-7">
+                    <input type="text" class="form-control" placeholder="Mid Name (Optional)" name="mid_name">
+                  </div>
+                  <br>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Last Name" name="l_name">
+                  </div>
+                  <br>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Identity Card Number" name="id_no">
+                  </div>
+                  <br>
+                  <div class="custom-file">
+                    <input type="file" name="file" class="custom-file-input" id="inputGroupFile01"
+                           aria-describedby="inputGroupFileAddon01" accept="image/*">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+                <br>
+                 <button type="submit" class="btn btn-raised btn-primary">Scan Image</button>
+                </div>
+              </form>
+        </div>
+    </div>
+
+<!--
+    <form action="scanner" method=post enctype=multipart/form-data>
+        <input type="file" name="file">
+        <input type="submit" value="Scan file">
+    </form>
+    <hr>
+-->
+
+{% if scanned %}
+    <hr>
+    <h1>Scanned results</h1>
+{% endif %}
+{% endblock body %}
+
+{% include "footer.html" %}

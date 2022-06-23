@@ -1,0 +1,161 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page Blank {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+<style>
+   
+	body {
+	  margin:30px;
+	  height:100vh;
+	}
+	.center {
+	  margin:45px;
+	  display:flex;
+	  align-items:center;
+	  justify-content:center;
+	
+	}
+	.button {
+	  background-color: #4CAF50;
+	  border: none;
+	  color: white;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	}
+	.form-input {
+	  width:350px;
+	  padding:20px;
+	  background:#fff;
+	  box-shadow: -3px -3px 7px rgba(94, 104, 121, 0.377),
+				  3px 3px 7px rgba(94, 104, 121, 0.377);
+	}
+	.form-input input {
+	  display:none;
+	
+	}
+	.form-input label {
+	  display:block;
+	  width:45%;
+	  height:45px;
+	  margin-left: 25%;
+	  line-height:50px;
+	  text-align:center;
+	  background:#abbdcc;
+	
+	  color:#fff;
+	  font-size:15px;
+	  font-family:"Open Sans",sans-serif;
+	  text-transform:Uppercase;
+	  font-weight:600;
+	  border-radius:5px;
+	  cursor:pointer;
+	}
+	
+	.form-input img {
+	  width:100%;
+	  display:none;
+	
+	  margin-bottom:30px;
+	}
+	  </style>
+	
+{% endblock stylesheets %}
+
+{% block content %}
+
+	<div class="content">
+		<div class="page-inner">
+			<div class="page-header">
+				<h4 class="page-title">Dashboard</h4>
+				<ul class="breadcrumbs">
+					<li class="nav-home">
+						<a href="#">
+							<i class="flaticon-home"></i>
+						</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Pages</a>
+					</li>
+					<li class="separator">
+						<i class="flaticon-right-arrow"></i>
+					</li>
+					<li class="nav-item">
+						<a href="#">Starter Page</a>
+					</li>
+				</ul>
+			</div>
+			<div class="page-category">
+				<div class="container">
+					<h2 class="animated fadeInDown" style="text-align: center;">IDentity  Card Verification</h2>
+				
+				  </div>
+				  <form action="/img_to_id" method=post enctype=multipart/form-data>  
+				 <div class="center">
+				  
+				  <div class="form-input">
+					<div class="preview">
+					  <img id="file-ip-1-preview" style='max-width:100px; max-height:180px; display: block; margin-left: auto; margin-right: auto;
+					  '>
+					</div>
+					<label for="file-ip-1">ID Card</label>
+					<input name="img1" type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+				  </div>
+				  __
+				  <div class="form-input">
+					<div class="preview">
+					  <img id="file-ip-2-preview" style='max-width:100px; max-height:180px; display: block; margin-left: auto; margin-right: auto;
+					  width: 50%;object-fit: cover'>
+					</div>
+					<label for="file-ip-2">Passport</label>
+					<input  name="img2" type="file" id="file-ip-2" accept="image/*" onchange="showPreview2(event);" class="button primary">
+				  </div>
+				
+				</div> 
+				<div class="center">
+				  <input type="submit" class="button"  value="Compare">
+				</div>  
+				</form>
+
+				<div class="alert alert-success" style="margin-top:18px;">
+					<strong>Result:</strong>{{ message }} 
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script type="text/javascript">
+	function showPreview(event){
+	if(event.target.files.length > 0){
+	  var src = URL.createObjectURL(event.target.files[0]);
+	  var preview = document.getElementById("file-ip-1-preview");
+	  preview.src = src;
+	  preview.style.display = "block";
+	}
+  }
+  </script>
+  <script type="text/javascript">
+	function showPreview2(event){
+	if(event.target.files.length > 0){
+	  var src = URL.createObjectURL(event.target.files[0]);
+	  var preview = document.getElementById("file-ip-2-preview");
+	  preview.src = src;
+	  preview.style.display = "block";
+	}
+  }
+  </script>
+{% endblock javascripts %}
