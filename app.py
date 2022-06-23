@@ -1,7 +1,6 @@
 from doctest import COMPARISON_FLAGS
 import json
 from gzip import READ
-from msilib.schema import File
 from tkinter import PhotoImage
 from tkinter.filedialog import SaveAs
 from flask import Flask, render_template, redirect, url_for, request, session
